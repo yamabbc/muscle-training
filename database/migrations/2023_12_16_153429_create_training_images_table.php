@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('training_images', function (Blueprint $table) {
             $table->id()->nullable(false);
-            $table->integer('training_id')->nullable(false);
+            $table->foreignId('training_id')->nullable()->constrained();
             $table->string('path')->nullable(false);
             $table->integer('sort')->nullable(false);
-            $table->timestamp('updated_at')->useCurrent()->nullable(false);
-            $table->timestamp('created_at')->useCurrent()->nullable(false);
+            $table->timestamps();
             $table->softDeletes();
         });
     }

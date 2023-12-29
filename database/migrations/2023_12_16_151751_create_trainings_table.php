@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id()->nullable(false);
-            $table->integer('admin_id')->nullable(false);
+            $table->foreignId('admin_id')->nullable()->constrained();
             $table->integer('category')->nullable(false);
             $table->string('name',60)->nullable(false);
             $table->text('how')->nullable(false);
             $table->text('effect')->nullable(false);
             $table->text('point')->nullable(false);
-            $table->timestamp('updated_at')->useCurrent()->nullable(false);
-            $table->timestamp('created_at')->useCurrent()->nullable(false);
+            $table->timestamps();
             $table->softDeletes();
         });
     }

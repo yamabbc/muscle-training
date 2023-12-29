@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainingManagementController;
+use App\Http\Controllers\UserTrainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [TrainingManagementController::class, 'index']);
+Route::get('/trainingmanagements', [TrainingManagementController::class, 'index'])->name('trainingmanagements.index');
+Route::get('/trainingmanagements/edit', [TrainingManagementController::class, 'edit'])->name('trainingmanagements.edit');
+Route::get('/trainingmanagements/create', [TrainingManagementController::class, 'create'])->name('trainingmanagements.create');
+Route::post('/trainingmanagements', [TrainingManagementController::class, 'store'])->name('trainingmanagements.store');
+Route::patch('/trainingmanagements/update', [TrainingManagementController::class, 'update'])->name('trainingmanagements.update');
+
+Route::get('/usertrainings/explanation', [UserTrainingController::class, 'explanation'])->name('usertrainings.explanation');
