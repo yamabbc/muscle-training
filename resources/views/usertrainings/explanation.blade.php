@@ -23,8 +23,7 @@
                  <a href="#" class="btn">更新</a>
              </div>
 
-                 
-                @foreach($trainings as $training)
+             @foreach($trainings as $training)
                   <div>
                     <lavel for="trainingname">トレーニング名称</lavel> 
                     <input type="text" id="trainingname" name="trainingname" value="{{ $training->name }}">
@@ -43,6 +42,8 @@
                      </ul>
                  </tr>
              </table>
+</div>
+             
          </article>
      </main>
      <footer>

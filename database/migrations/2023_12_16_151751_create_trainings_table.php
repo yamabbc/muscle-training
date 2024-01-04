@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id()->nullable(false);
-            $table->foreignId('admin_id')->nullable()->constrained();
+            // $table->foreignId('admin_id')->nullable()->constrained();
+            $table->integer('admin_id')->nullable(false);
             $table->integer('category')->nullable(false);
             $table->string('name',60)->nullable(false);
             $table->text('how')->nullable(false);

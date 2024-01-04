@@ -23,6 +23,15 @@
              </div>
              <form action="{{ route('trainingmanagements.store') }}" method="POST">
                   @csrf
+
+                  <div>
+                    <lavel for="trainingcategory">トレーニングカテゴリー</lavel> 
+                    <select id="trainingcategory" name="trainingcategory">
+                    @foreach($partvalue as $key => $value)
+                      <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
+                    </select>
+                  </div>
                   <div>
                     <lavel for="trainingname">トレーニング名称</lavel> 
                     <input type="text" id="trainingname" name="trainingname">

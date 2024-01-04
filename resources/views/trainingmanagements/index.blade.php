@@ -16,14 +16,14 @@
      </header>
      <main>
         @if (session('flash_message'))
-          <p>{{ session('flash_message') }}</p>
+        <p>{{ session('flash_message') }}</p>
         @endif
          <article class="trainings">
              <div class="trainings-ui">
                  <div>
                      <!-- ここに作成する -->
                  </div>
-                 <a href="{{ route('trainingmanagements.create') }}">登録</a>
+                 <a href="{{ route('trainingmanagements.create') }}"><button type=="button">登録</button></a>
              </div>
              <table class="products-table">
                  <tr>
@@ -36,14 +36,17 @@
                  <tr>
                    <th>{{ $training->id }}</th>
                    <th>{{ $training->name }}</th>
-                   <th>{{ $training->category }}</th>
-                   <th><a href="{{ route('usertrainings.explanation') }}">詳細</a><th>
-                     <th><a href="{{ route('trainingmanagements.edit') }}">編集</a><th>
-                     <th><a href="#" class="btn">削除</a></th>
+                   <th>{{ $training->category=$part[5] }}</th>
+
+                   <th><a href="{{ route('trainingmanagements.show',['id'=>$training->id]) }}"><button type=="button">詳細</button></a></th>
+                   <th><a href="{{ route('trainingmanagements.edit',['id'=>$training->id]) }}"><button type=="button">編集</button></a><th>
+                   <form action="{{ route('trainingmanagements.destroy',['id'=>$training->id]) }}" method="POST" onsubmit="return confirm('本当に削除してもよろしいですか？');">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit">削除</button>
+                   </form>
                  </tr>
                 @endforeach
-                     </ul>
-                 </tr>
              </table>
          </article>
      </main>

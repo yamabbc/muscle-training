@@ -23,27 +23,27 @@
                  
              </div>
 
-                 
-                @foreach($trainings as $training)
+               <form action="{{ route('trainingmanagements.update',['id'=>$trainings->id]) }}" method="POST">
+               @csrf
+               @method('PATCH')
+
                   <div>
                     <lavel for="trainingname">トレーニング名称</lavel> 
-                    <input type="text" id="trainingname" name="trainingname" value="{{ $training->name }}">
+                    <input type="text" id="trainingname" name="trainingname" value="{{ $trainings->name }}">
                   </div>
                   <div>
                     <lavel for="traininghow">やり方</lavel>
-                    <textarea id="traininghow" name="traininghow">{{ $training->how }}</textarea>
+                    <textarea id="traininghow" name="traininghow">{{ $trainings->how }}</textarea>
                   </div>
                     <lavel for="trainingeffect">効果</lavel>
-                    <textarea id="trainingeffect" name="trainingeffect">{{ $training->effect }}</textarea>
+                    <textarea id="trainingeffect" name="trainingeffect">{{ $trainings->effect }}</textarea>
                   <div>
                     <lavel for="trainingpoint">ポイント</lavel>
-                    <textarea id="trainingpoint" name="trainingpoint">{{ $training->point }}</textarea>
+                    <textarea id="trainingpoint" name="trainingpoint">{{ $trainings->point }}</textarea>
                    </div>
-                @endforeach
+
                 <button type="submit">更新</button>
-                     </ul>
-                 </tr>
-             </table>
+                </form>
          </article>
      </main>
      <footer>

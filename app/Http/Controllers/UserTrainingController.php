@@ -18,4 +18,10 @@ class UserTrainingController extends Controller
         // 変数$trainingsをexpanation.blade.phpファイルに渡す
         return view('usertrainings.explanation',compact('trainings'));
      }
+
+     /*public function explanation(Request $request)  
+{  
+    $user = training::find($request->Id);  
+    return view("usertrainings/explanation", ["user" => $user]);  
+}*/
 }
