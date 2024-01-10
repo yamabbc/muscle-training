@@ -21,8 +21,6 @@ class TrainingManagementController extends Controller{
           4 => '背中',
           5 => '脚',
         );
-        $trainings->category = $part[1];
-        
 
         // 変数$trainingsをindex.blade.phpファイルに渡す
         return view('trainingmanagements.index',compact('trainings','part'));

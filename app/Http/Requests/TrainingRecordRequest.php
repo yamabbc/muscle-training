@@ -3,10 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 
-class AdminLoginRequest extends FormRequest
+class TrainingRecordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +22,7 @@ class AdminLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'password' => 'required',
+            //
         ];
-    }
-    public function authenticate(): void
-    {
-        if (!Auth::guard('admin')->attempt($this->only('name', 'password'))) {
-            throw ValidationException::withMessages(['failed' => __('auth.failed')]);
-        }
     }
 }

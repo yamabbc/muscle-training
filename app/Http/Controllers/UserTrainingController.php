@@ -5,23 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Training;
+use App\Models\Training_record;
 use App\Models\Training_image;
 
 class UserTrainingController extends Controller
 {
-     // 解説ページ
-     public function explanation() {
-        
-        $trainings = DB::table('trainings')->select('name','how','effect','point')->get();
-             
- 
-        // 変数$trainingsをexpanation.blade.phpファイルに渡す
-        return view('usertrainings.explanation',compact('trainings'));
-     }
+    //一覧ページ
+    public function index() {
 
-     /*public function explanation(Request $request)  
-{  
-    $user = training::find($request->Id);  
-    return view("usertrainings/explanation", ["user" => $user]);  
-}*/
+        $trainings = Training::all();
+        $trainingrecords = Training_record::all();
+
+
+        // 変数$trainingsをindex.blade.phpファイルに渡す
+        return view('usertrainings.index',compact('trainings','trainingrecords'));
+    }
 }

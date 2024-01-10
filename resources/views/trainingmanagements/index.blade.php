@@ -36,8 +36,7 @@
                  <tr>
                    <th>{{ $training->id }}</th>
                    <th>{{ $training->name }}</th>
-                   <th>{{ $training->category=$part[5] }}</th>
-
+                   <th>{{$part[$training->category]}}</th>
                    <th><a href="{{ route('trainingmanagements.show',['id'=>$training->id]) }}"><button type=="button">詳細</button></a></th>
                    <th><a href="{{ route('trainingmanagements.edit',['id'=>$training->id]) }}"><button type=="button">編集</button></a><th>
                    <form action="{{ route('trainingmanagements.destroy',['id'=>$training->id]) }}" method="POST" onsubmit="return confirm('本当に削除してもよろしいですか？');">

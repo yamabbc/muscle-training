@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainingManagementController;
 use App\Http\Controllers\UserTrainingController;
+use App\Http\Controllers\TrainingExplanationController;
+use App\Http\Controllers\TrainingRecordController;
+use App\Http\Controllers\TrainingResultController;
 use App\Http\Controllers\AdminLoginController;
 
 
@@ -18,6 +21,7 @@ use App\Http\Controllers\AdminLoginController;
 |
 */
 
+//ユーザー認証機能
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,17 +39,28 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+//ユーザー一覧画面
+Route::get('/usertrainings', [UserTrainingController::class, 'index'])->name('usertrainings.index');
 
 
-Route::get('/trainingmanagements', [TrainingManagementController::class, 'index'])->name('trainingmanagements.index');
-Route::get('/trainingmanagements/show/{id}', [TrainingManagementController::class, 'show'])->name('trainingmanagements.show');
-Route::get('/trainingmanagements/edit/{id}', [TrainingManagementController::class, 'edit'])->name('trainingmanagements.edit');
-Route::get('/trainingmanagements/create', [TrainingManagementController::class, 'create'])->name('trainingmanagements.create');
-Route::post('/trainingmanagements', [TrainingManagementController::class, 'store'])->name('trainingmanagements.store');
-Route::patch('/trainingmanagements/update/{id}', [TrainingManagementController::class, 'update'])->name('trainingmanagements.update');
-Route::delete('/trainingmanagements/destroy/{id}', [TrainingManagementController::class, 'destroy'])->name('trainingmanagements.destroy');
+//解説画面
+Route::get('/explanations', [TrainingExplanationController::class, 'select'])->name('explanations.select');
+Route::get('/explanations/arm/{id}', [TrainingExplanationController::class, 'arm'])->name('explanations.arm');
+Route::get('/explanations/shoulder/{id}', [TrainingExplanationController::class, 'shoulder'])->name('explanations.shoulder');
+Route::get('/explanations/chest/{id}', [TrainingExplanationController::class, 'chest'])->name('explanations.chest');
+Route::get('/explanations/back/{id}', [TrainingExplanationController::class, 'back'])->name('explanations.back');
+Route::get('/explanations/leg/{id}', [TrainingExplanationController::class, 'leg'])->name('explanations.leg');
 
-Route::get('/usertrainings/explanation', [UserTrainingController::class, 'explanation'])->name('usertrainings.explanation');
+//記録画面
+Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->name('trainingrecords.input');
+Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->name('trainingrecords.store');
+
+//成果画面
+Route::get('/trainingresults/date', [TrainingResultController::class, 'date'])->name('trainingresults.date');
+Route::get('/trainingresults/display/{id}', [TrainingResultController::class, 'display'])->name('trainingresults.display');
+
+
+
 
 // 管理ログイン画面
 Route::get('/admin-login', [AdminLoginController::class, 'create'])->name('admin.login');
@@ -59,5 +74,13 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin', function () {
         return view('admin.top');
     })->name('admin.top');
+    //管理者一覧・編集・登録・削除
+    Route::get('/trainingmanagements', [TrainingManagementController::class, 'index'])->name('trainingmanagements.index');
+    Route::get('/trainingmanagements/show/{id}', [TrainingManagementController::class, 'show'])->name('trainingmanagements.show');
+    Route::get('/trainingmanagements/edit/{id}', [TrainingManagementController::class, 'edit'])->name('trainingmanagements.edit');
+    Route::get('/trainingmanagements/create', [TrainingManagementController::class, 'create'])->name('trainingmanagements.create');
+    Route::post('/trainingmanagements', [TrainingManagementController::class, 'store'])->name('trainingmanagements.store');
+    Route::patch('/trainingmanagements/update/{id}', [TrainingManagementController::class, 'update'])->name('trainingmanagements.update');
+    Route::delete('/trainingmanagements/destroy/{id}', [TrainingManagementController::class, 'destroy'])->name('trainingmanagements.destroy');
 });
 
