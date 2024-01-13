@@ -14,62 +14,25 @@ class TrainingExplanationController extends Controller{
     public function select() {
 
         $trainings = Training::all();
+        $part = Config::get('category.$part');
 
 
-        // 変数$trainingsをindex.blade.phpファイルに渡す
-        return view('explanations.select',compact('trainings'));
+        // 変数$trainingsをselect.blade.phpファイルに渡す
+        return view('explanations.select',compact('trainings','part'));
+        
     }
 
+    // 詳細ページ
+    public function show($category) {
 
-    
-     // 腕詳細ページ
-    public function arm($id) {
-
-        $trainings = Training::find($id);
-
-           
-
-      // 変数$trainingsをarm.blade.phpファイルに渡す
-      return view('explanations.arm',compact('trainings'));
-    }
-
-    // 肩詳細ページ
-    public function shoulder($id) {
-
-        $trainings = Training::find($id);
+        $trainings = Training::where('category',$category)->get();
+        $part = Config::get('category.$part');
+        
     
 
         // 変数$trainingsをshoulder.blade.phpファイルに渡す
-        return view('explanations.shoulder',compact('trainings'));
-    }
-
-    // 胸詳細ページ
-    public function chest($id) {
-
-        $trainings = Training::find($id);
-    
-
-        // 変数$trainingsをchest.blade.phpファイルに渡す
-        return view('explanations.chest',compact('trainings'));
-    }
-
-    public function back($id) {
-
-        $trainings = Training::find($id);
-    
-
-        // 変数$trainingsをback.blade.phpファイルに渡す
-        return view('explanations.back',compact('trainings'));
-    }
-
-    // 脚詳細ページ
-    public function leg($id) {
-
-        $trainings = Training::find($id);
-    
-
-        // 変数$trainingsをleg.blade.phpファイルに渡す
-        return view('explanations.leg',compact('trainings'));
+        return view('explanations.show',compact('trainings','part'),['category'=>$category]);
+        
     }
 
 }

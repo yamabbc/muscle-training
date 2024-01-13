@@ -45,11 +45,7 @@ Route::get('/usertrainings', [UserTrainingController::class, 'index'])->name('us
 
 //解説画面
 Route::get('/explanations', [TrainingExplanationController::class, 'select'])->name('explanations.select');
-Route::get('/explanations/arm/{id}', [TrainingExplanationController::class, 'arm'])->name('explanations.arm');
-Route::get('/explanations/shoulder/{id}', [TrainingExplanationController::class, 'shoulder'])->name('explanations.shoulder');
-Route::get('/explanations/chest/{id}', [TrainingExplanationController::class, 'chest'])->name('explanations.chest');
-Route::get('/explanations/back/{id}', [TrainingExplanationController::class, 'back'])->name('explanations.back');
-Route::get('/explanations/leg/{id}', [TrainingExplanationController::class, 'leg'])->name('explanations.leg');
+Route::get('/explanations/show/{category}', [TrainingExplanationController::class, 'show'])->name('explanations.show');
 
 //記録画面
 Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->name('trainingrecords.input');

@@ -31,7 +31,7 @@
                   </div>
                   <lavel for="trainingpart">部位</lavel>
                     <select id="trainingpart" name="trainingpart">
-                      @foreach($part as $key => $value)
+                      @foreach($trainingname as $key => $value)
                         <option value="{{ $key }}">{{ $value }}</option>
                       @endforeach
                     </select>

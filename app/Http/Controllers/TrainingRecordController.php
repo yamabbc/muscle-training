@@ -13,9 +13,9 @@ class TrainingRecordController extends Controller{
 
     public function input() {
         $weight = Config::get('category.$weight');
-        $part = Config::get('category.$part');
+        $trainingname = Config::get('category.$trainingname');
           return view('trainingrecords.input',
-           ['weight'=>$weight,],['part'=>$part,]);
+           ['weight'=>$weight,],['trainingname'=>$trainingname,]);
 
    }
 
