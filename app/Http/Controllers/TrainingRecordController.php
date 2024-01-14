@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Training_record;
 use Illuminate\Support\Facades\Config;
 use App\Http\Requests\TrainingRecordRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class TrainingRecordController extends Controller{
 
@@ -23,9 +25,10 @@ class TrainingRecordController extends Controller{
 
      // 作成機能
     public function store(TrainingRecordRequest $request) {
-
+        
+        $auths = Auth::user();
         $trainingrecords = new Training_record();
-        $trainingrecords->user_id = 1;
+        $trainingrecords->user_id = $auths->id;
         $trainingrecords->training_id = $request->trainingpart;
         $trainingrecords->date = $request->input('trainingdate');
         $trainingrecords->times = $request->input('trainingtimes');

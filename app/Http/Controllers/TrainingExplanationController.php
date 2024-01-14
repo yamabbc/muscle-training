@@ -31,7 +31,7 @@ class TrainingExplanationController extends Controller{
     
 
         // 変数$trainingsをshoulder.blade.phpファイルに渡す
-        return view('explanations.show',compact('trainings','part'),['category'=>$category]);
+        return view('explanations.show',compact('trainings','part'));
         
     }
 
