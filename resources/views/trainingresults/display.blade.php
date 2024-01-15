@@ -21,13 +21,13 @@
 
              <div>
                <h3>トレーニング日</h3>
-               <p>{{ $trainingrecords->date}}</p>
+               <p>{{ $trainingrecordss->date}}</p>
                <h3>トレーニング内容</h3>
-               <th>{{$part[$trainingrecords->training_id]}}</th>
+               <th>{{$part[$trainingrecordss->training_id]}}</th>
                <h3>回数</h3>
-               <p>{{ $trainingrecords->times}}回</p>
+               <p>{{ $trainingrecordss->times}}回</p>
                <h3>重量</h3>
-               <p>{{ $trainingrecords->weight/1000}}kg</p>
+               <p>{{ $trainingrecordss->weight/1000}}kg</p>
              </div>
 
          </article>

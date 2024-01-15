@@ -18,13 +18,26 @@
              <div class="trainings-ui">
                  <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
              </div>
-             @foreach($trainingrecords as $trainingrecord)
-             <div>
-               <h3>トレーニング日</h3>
-               <a href="{{ route('trainingresults.display',['id'=>$trainingrecord->id]) }}"><button type=="button">{{ $trainingrecord->date}}</button></a>
-             </div>
-             @endforeach 
+             <h3>トレーニング日</h3> 
 
+
+             <div class="accordion-btn">アコーディオンボタン</div>
+               <div class="accordion-content">
+                 @foreach($trainingrecords as $trainingrecord)
+                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord->id]) }}"><button type=="button">{{ $trainingrecord->date}}</button></a><br>
+                 @endforeach 
+               </div>
+
+               <script>
+                 document.querySelectorAll('.accordion-btn').forEach(function(el){
+                   const next = el.nextElementSibling
+                   const nextH = next.scrollHeight + 'px'
+                   next.style.overflow = 'hidden'
+                   next.style.transition = '0.5s'
+                   next.style.height = el.classList.contains("open") ? nextH : 0
+                   el.onclick = () => next.style.height = el.classList.toggle('open') ? nextH : 0
+                 })
+               </script>
          </article>
      </main>
      <footer>

@@ -21,7 +21,7 @@ class TrainingResultController extends Controller{
       // 詳細ページ
       public function display($id) {
             
-        $trainingrecords = Training_record::find($id);
+        $trainingrecordss = Training_record::find($id);
         $part = Config::get('category.$part');
         
         
@@ -29,6 +29,6 @@ class TrainingResultController extends Controller{
     
 
      // 変数$trainingrecordsをdisplay.blade.phpファイルに渡す
-       return view('trainingresults.display',compact('trainingrecords'),['part'=>$part,]);
+       return view('trainingresults.display',compact('trainingrecordss'),['part'=>$part,]);
     }
 }
