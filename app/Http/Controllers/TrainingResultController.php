@@ -12,8 +12,10 @@ class TrainingResultController extends Controller{
     public function date() {
 
       $trainingrecords = DB::table('training_records')->get();
+
+      $recorddates = Training_record::whereYear('date', '2024')->get();
         // 変数$trainingsをdate.blade.phpファイルに渡す
-        return view('trainingresults.date',compact('trainingrecords'));
+        return view('trainingresults.date',compact('trainingrecords','recorddates'));
       }
 
 
