@@ -37,18 +37,18 @@
                   content: '▲';
                 }
              </style>
-             <div class="accordion-btn open">2023年</div>
+             <div class="accordion-btn open">2024年</div>
                <div class="accordion-content">
-                 @foreach($trainingrecords as $trainingrecord)
+                 @foreach($trainingrecords4 as $trainingrecord4)
                  
-                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord->id]) }}"><button type=="button">@foreach($recorddates as $recorddate){{ $recorddate->date}} @endforeach </button></a><br>
+                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord4->id]) }}"><button type=="button">{{ $trainingrecord4->date}} </button></a><br>
                  @endforeach 
                 
                </div>
-               <div class="accordion-btn ">2022年</div>
+               <div class="accordion-btn ">2023年</div>
                <div class="accordion-content">
-                 @foreach($trainingrecords as $trainingrecord)
-                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord->id]) }}"><button type=="button">{{ $trainingrecord->date}}</button></a><br>
+                 @foreach($trainingrecords3 as $trainingrecord3)
+                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord3->id]) }}"><button type=="button">{{ $trainingrecord3->date}}</button></a><br>
                  @endforeach 
                </div>
 
