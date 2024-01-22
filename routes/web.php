@@ -53,7 +53,7 @@ Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->nam
 
 //成果画面
 Route::get('/trainingresults/date', [TrainingResultController::class, 'date'])->name('trainingresults.date');
-Route::get('/trainingresults/display/{id}', [TrainingResultController::class, 'display'])->name('trainingresults.display');
+Route::get('/trainingresults/display/{date}', [TrainingResultController::class, 'display'])->name('trainingresults.display');
 
 
 
