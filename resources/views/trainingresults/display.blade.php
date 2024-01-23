@@ -20,14 +20,16 @@
              </div>
 
              <div>
-               <h3>トレーニング日</h3>
-               <p>{{ $trainingrecordss->date}}</p>
+             <h3>トレーニング日</h3>
+               <p>{{$date}}</p>
+               @foreach($trainingrecordss as $trainingrecordsss)
                <h3>トレーニング内容</h3>
-               <th>{{$part[$trainingrecordss->training_id]}}</th>
+               <th>{{$trainingname[$trainingrecordsss->training_id]}}</th>
                <h3>回数</h3>
-               <p>{{ $trainingrecordss->times}}回</p>
+               <p>{{ $trainingrecordsss->times}}回</p>
                <h3>重量</h3>
-               <p>{{ $trainingrecordss->weight/1000}}kg</p>
+               <p>{{ $trainingrecordsss->weight/1000}}kg</p>
+               @endforeach
              </div>
 
          </article>

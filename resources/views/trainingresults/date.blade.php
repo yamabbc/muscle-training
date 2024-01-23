@@ -39,9 +39,9 @@
              </style>
              <div class="accordion-btn open">2024年</div>
                <div class="accordion-content">
-                 @foreach($dates as $i =>$value) 
+                 @foreach($dates as $i =>$value)
                  
-                      <a href="{{ route('trainingresults.display',['date'=> $i]) }}"><button type=="button">{{ $value}} </button></a><br>
+                      <a href="{{ route('trainingresults.display',['date'=> $value]) }}"><button type=="button">{{ $value}} </button></a><br>
                  @endforeach 
 
                 
@@ -49,7 +49,7 @@
                <div class="accordion-btn ">2023年</div>
                <div class="accordion-content">
                  @foreach($trainingrecords3 as $trainingrecord3)
-                      <a href="{{ route('trainingresults.display',['id'=>$trainingrecord3->id]) }}"><button type=="button">{{ $trainingrecord3->date}}</button></a><br>
+
                  @endforeach 
                </div>
 
