@@ -11,8 +11,6 @@ class TrainingResultController extends Controller{
 
     public function date() {
 
-      
-
       $trainingrecords4 = Training_record::whereYear('date', '2024')->get();
       $trainingrecords3 = Training_record::whereYear('date', '2023')->get();
       foreach ($trainingrecords4 as $trainingrecord4){
@@ -21,12 +19,20 @@ class TrainingResultController extends Controller{
       foreach($datearrays as $datearray)
         if (!in_array($datearray, $dates)) {
           $dates[] = $datearray;
+      
+          foreach ($trainingrecords3 as $trainingrecord3){
+            $datearrays3[]=$trainingrecord3->date;
+            $date3 = [];
+            foreach($datearrays3 as $datearray3)
+              if (!in_array($datearray3, $date3)) {
+                $date3[] = $datearray3;
 
-          
+              }
+            }
         }
       }
         // 変数$trainingsをdate.blade.phpファイルに渡す
-        return view('trainingresults.date',compact('trainingrecords4','trainingrecords3','datearrays','dates'));
+        return view('trainingresults.date',compact('trainingrecords4','trainingrecords3','dates','date3'));
       }
 
 

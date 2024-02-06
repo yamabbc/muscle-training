@@ -27,11 +27,11 @@
              </div>
              <table class="products-table">
                  <tr>
-                 <a href="{{ route('explanations.show',[$trainings[0]]) }}"><button type=="button">腕解説</button></a><br>
-                 <a href="{{ route('explanations.show',[$trainings[1]]) }}"><button type=="button">肩解説</button></a><br>
-                 <a href="{{ route('explanations.show',[$trainings[2]]) }}"><button type=="button">胸解説</button></a><br>
-                 <a href="{{ route('explanations.show',[$trainings[3]]) }}"><button type=="button">背中解説</button></a><br>
-                 <a href="{{ route('explanations.show',[$trainings[4]]) }}"><button type=="button">脚解説</button></a><br>
+                 <a href="{{ route('explanations.show',[$trainings[0]]) }}">腕解説<button type=="button"><img src="{{asset('storage/表紙腕解説.png')}}"height="200px" width="300px"></button></a><br>
+                 <a href="{{ route('explanations.show',[$trainings[1]]) }}">肩解説<button type=="button"><img src="{{asset('storage/表紙肩解説.png')}}"height="200px" width="300px"></button></a><br>
+                 <a href="{{ route('explanations.show',[$trainings[2]]) }}">胸解説<button type=="button"><img src="{{asset('storage/表紙胸解説.png')}}"height="200px" width="300px"></button></a><br>
+                 <a href="{{ route('explanations.show',[$trainings[3]]) }}">背中解説<button type=="button"><img src="{{asset('storage/表紙背中解説.png')}}"height="200px" width="300px"></button></a><br>
+                 <a href="{{ route('explanations.show',[$trainings[4]]) }}">脚解説<button type=="button"><img src="{{asset('storage/表紙脚解説.png')}}"height="200px" width="300px"></button></a><br>
                  </tr>
              </table>
          </article>

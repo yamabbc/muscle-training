@@ -8,6 +8,7 @@ use App\Http\Controllers\TrainingExplanationController;
 use App\Http\Controllers\TrainingRecordController;
 use App\Http\Controllers\TrainingResultController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\UploadController;
 
 
 /*
@@ -47,6 +48,9 @@ Route::get('/usertrainings', [UserTrainingController::class, 'index'])->name('us
 Route::get('/explanations', [TrainingExplanationController::class, 'select'])->name('explanations.select');
 Route::get('/explanations/show/{category}', [TrainingExplanationController::class, 'show'])->name('explanations.show');
 
+
+
+
 //記録画面
 Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->name('trainingrecords.input');
 Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->name('trainingrecords.store');
@@ -78,5 +82,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/trainingmanagements', [TrainingManagementController::class, 'store'])->name('trainingmanagements.store');
     Route::patch('/trainingmanagements/update/{id}', [TrainingManagementController::class, 'update'])->name('trainingmanagements.update');
     Route::delete('/trainingmanagements/destroy/{id}', [TrainingManagementController::class, 'destroy'])->name('trainingmanagements.destroy');
+    Route::get('/image_test', [UploadController::class, 'index'])->name('image_test');
+    Route::post('/image_check', [UploadController::class, 'imagePost'])->name('image_check');
 });
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Training;
 use Illuminate\Support\Facades\Config;
 use App\Http\Requests\TrainingRequest;
+use App\Models\Training_image;
 
 class TrainingExplanationController extends Controller{
 
@@ -27,12 +28,14 @@ class TrainingExplanationController extends Controller{
 
         $trainings = Training::where('category',$category)->get();
         $part = Config::get('category.$part');
+        $images = Training_image::where('training_id',$category)->get();
         
     
 
         // 変数$trainingsをshoulder.blade.phpファイルに渡す
-        return view('explanations.show',compact('trainings','part'));
+        return view('explanations.show',compact('trainings','part','images'));
         
     }
 
-}
+    }
+
