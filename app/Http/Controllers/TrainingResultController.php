@@ -11,28 +11,31 @@ class TrainingResultController extends Controller{
 
     public function date() {
 
-      $trainingrecords4 = Training_record::whereYear('date', '2024')->get();
-      $trainingrecords3 = Training_record::whereYear('date', '2023')->get();
+      $trainingrecords4 = DB::table('Training_records')->select('date')->get();
+      
       foreach ($trainingrecords4 as $trainingrecord4){
       $datearrays[]=$trainingrecord4->date;
       $dates = [];
       foreach($datearrays as $datearray)
         if (!in_array($datearray, $dates)) {
           $dates[] = $datearray;
-      
-          foreach ($trainingrecords3 as $trainingrecord3){
-            $datearrays3[]=$trainingrecord3->date;
-            $date3 = [];
-            foreach($datearrays3 as $datearray3)
-              if (!in_array($datearray3, $date3)) {
-                $date3[] = $datearray3;
-
-              }
-            }
         }
       }
+      $dateArray = [];
+        foreach ($dates as $value) {
+          $year = mb_substr($value, 0, 4);
+          $date = mb_substr($value, 5, 5);
+
+          if (!array_key_exists($year, $dateArray)) {
+              $dateArray[$year] = [$date];
+          } else {
+              $dateArray[$year][] = $date;
+
+            }
+        }
+
         // 変数$trainingsをdate.blade.phpファイルに渡す
-        return view('trainingresults.date',compact('trainingrecords4','trainingrecords3','dates','date3'));
+        return view('trainingresults.date',compact('trainingrecords4','dates','dateArray','year'));
       }
 
 

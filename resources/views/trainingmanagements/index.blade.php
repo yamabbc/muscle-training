@@ -24,7 +24,7 @@
                      <!-- ここに作成する -->
                  </div>
                  <a href="{{ route('trainingmanagements.create') }}"><button type=="button">トレーニング解説登録</button></a>
-                 <a href="{{ route('image_test') }}"><button type=="button">画像登録</button></a>
+                 <a href="{{ route('image_register') }}"><button type=="button">画像登録</button></a>
              </div>
              <table class="products-table">
                  <tr>

@@ -82,7 +82,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/trainingmanagements', [TrainingManagementController::class, 'store'])->name('trainingmanagements.store');
     Route::patch('/trainingmanagements/update/{id}', [TrainingManagementController::class, 'update'])->name('trainingmanagements.update');
     Route::delete('/trainingmanagements/destroy/{id}', [TrainingManagementController::class, 'destroy'])->name('trainingmanagements.destroy');
-    Route::get('/image_test', [UploadController::class, 'index'])->name('image_test');
+    Route::get('/image_register', [UploadController::class, 'index'])->name('image_register');
     Route::post('/image_check', [UploadController::class, 'imagePost'])->name('image_check');
 });
 

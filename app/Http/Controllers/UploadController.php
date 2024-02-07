@@ -13,7 +13,7 @@ class UploadController extends Controller
         /*画面表示*/
     public function index(){
         $trainingid = Config::get('category.$trainingid');
-        return view('image_test',['trainingid'=>$trainingid]);
+        return view('image_register',['trainingid'=>$trainingid]);
     }
         /* 画面表保存*/
     public function imagePost(Request $request){

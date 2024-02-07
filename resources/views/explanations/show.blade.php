@@ -22,11 +22,11 @@
                    <a href="{{ route('explanations.select') }}">&lt; 戻る</a>
                  </div>
              </div>
-             @foreach($images as $image)
-             <img src="{{asset($image->path)}}"height="200px" width="300px">
-             @endforeach
+
              @foreach($trainings as $training)
              <div>
+             <img src="{{asset($images[0]->path)}}"height="200px" width="300px">
+             <img src="{{asset($images[1]->path)}}"height="200px" width="300px">
              <h3>トレーニング名</h3>
                <p>{{ $training->name }}</p>
                <h3>やり方</h3>

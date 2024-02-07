@@ -37,20 +37,19 @@
                   content: '▲';
                 }
              </style>
-             <div class="accordion-btn open">2024年</div>
-               <div class="accordion-content">
-                 @foreach($dates as $i =>$value)
-                      <a href="{{ route('trainingresults.display',['date'=> $value]) }}"><button type=="button">{{ $value}} </button></a><br>
+             
+               
+                 @foreach($dateArray as $key=> $value)
+                 
+                 <div class="accordion-btn open">{{$key}}年</div>
+                 <div class="accordion-content">
+                 
+                 @foreach($value as $i =>$v)
+                      <a href="{{ route('trainingresults.display',['date'=> "$key-$v"]) }}"><button type=="button">{{ $v}} </button></a><br>
                  @endforeach 
-
+                 @endforeach 
                 
-               </div>
-               <div class="accordion-btn ">2023年</div>
-               <div class="accordion-content">
-               @foreach($date3 as $i =>$value)
-                      <a href="{{ route('trainingresults.display',['date'=> $value]) }}"><button type=="button">{{ $value}} </button></a><br>
-                 @endforeach 
-               </div>
+
 
                <script>
                  document.querySelectorAll('.accordion-btn').forEach(function(el){
