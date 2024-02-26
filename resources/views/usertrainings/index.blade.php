@@ -1,34 +1,29 @@
 <!DOCTYPE html>
  <html lang="ja">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>ユーザー一覧</title>
- </head>
- 
+ @include('layouts.head')
+ <title>トレーニング記録</title>
  <body>
-     <header>
-         <nav>
-             <a>筋トレ管理アプリ</a>
-             <a href="#" class="btn">ログアウト</a>
-         </nav>
-     </header>
-     <main>
-         <article class="trainings">
-             <table class="usertrainings-table">
-                 <tr>
-                   <th><a href="{{ route('explanations.select') }}"><button type=="button">トレーニング</button></a></th>
-                   <th><a href="{{ route('trainingrecords.input') }}"><button type=="button">記録</button></a></th>
-                   <th><a href="{{ route('trainingresults.date') }}"><button type=="button">成果</button></a></th>
-                 </tr>
+   @include('layouts.header')
+    <main>
+        <style>
+          .btn {
+            height: 80px;
+          }
+        </style>
 
-             </table>
-         </article>
-     </main>
-     <footer>
-         <p class="copyright">&copy; 筋トレ管理アプリ All rights reserved.</p>
-     </footer>
+              <div class="container">
+                <div class="m-5 pt-5 text-center">
+                  <a href="{{ route('explanations.select') }}"><button class="btn btn-primary btn-lg w-50" type=="button">トレーニング</button></a>
+                </div>
+                <div class="m-5 pt-5 text-center">
+                  <a href="{{ route('trainingrecords.input') }}"><button class="btn btn-primary btn-lg w-50" type=="button">記録</button></a>
+                </div>
+                <div class="m-5 pt-5 text-center">
+                  <a href="{{ route('trainingresults.date') }}"><button class="btn btn-primary btn-lg w-50" type=="button">成果</button></a>
+                </div>
+              </div>
+    </main>
+     @include('layouts.footer')
  </body>
  
  </html>

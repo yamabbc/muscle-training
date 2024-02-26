@@ -1,20 +1,9 @@
 <!DOCTYPE html>
  <html lang="ja">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     @foreach($trainings as $training)
-     <title>{{$part[$training->category]}}詳細</title>
-     @endforeach
- </head>
+ @include('layouts.head')
+ <title>トレーニング記録</title>
  <body>
-     <header>
-         <nav>
-             <a>筋トレ管理アプリ</a>
-             <a href="#" class="btn">ログアウト</a>
-         </nav>
-     </header>
+   @include('layouts.header')
      <main>
          <article class="trainings">
              <div class="trainings-ui">
@@ -39,9 +28,7 @@
              @endforeach
          </article>
      </main>
-     <footer>
-         <p class="copyright">&copy; 筋トレ管理アプリ All rights reserved.</p>
-     </footer>
+     @include('layouts.footer')
  </body>
  
  </html>

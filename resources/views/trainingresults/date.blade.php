@@ -1,18 +1,9 @@
 <!DOCTYPE html>
  <html lang="ja">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>成果年月日</title>
- </head>
+ @include('layouts.head')
+ <title>成果年月日</title>
  <body>
-     <header>
-         <nav>
-             <a>筋トレ管理アプリ</a>
-             <a href="#" class="btn">ログアウト</a>
-         </nav>
-     </header>
+   @include('layouts.header')
      <main>
          <article class="trainings">
              <div class="trainings-ui">
@@ -21,14 +12,6 @@
              <h3>トレーニング日</h3> 
 
              <style>
-               .accordion-btn {
-                 cursor: pointer;
-                 background: skyblue;
-                 padding: 10px;
-                }
-               .accordion-content p{
-                 padding: 10px;
-                }
                 .accordion-btn::after{
                   content: '▼';
                   float: right;
@@ -38,16 +21,19 @@
                 }
              </style>
              
-               
+             <div class="container text-center">
                  @foreach($dateArray as $key=> $value)
-                 
-                 <div class="accordion-btn open">{{$key}}年</div>
-                 <div class="accordion-content">
-                 
-                 @foreach($value as $i =>$v)
-                      <a href="{{ route('trainingresults.display',['date'=> "$key-$v"]) }}"><button type=="button">{{ $v}} </button></a><br>
+                   <div class="accordion-btn btn btn-success btn-lg w-50 fs-3" type=="button">{{$key}}年</div>
+                     <div class="accordion-content">
+                       @foreach($value as $i =>$v)
+                       @php
+                       $s = str_replace('-', '月',$v);
+                       @endphp
+                         <a href="{{ route('trainingresults.display',['date'=> "$key-$v"]) }}"><button class="btn btn-outline-success btn-lg w-50 fs-5" type=="button">{{ $s}} 日</button></a><br>
+                       @endforeach 
+                     </div>
                  @endforeach 
-                 @endforeach 
+
                 
 
 
@@ -63,9 +49,7 @@
                </script>
          </article>
      </main>
-     <footer>
-         <p class="copyright">&copy; 筋トレ管理アプリ All rights reserved.</p>
-     </footer>
+     @include('layouts.footer')
  </body>
  
  </html>

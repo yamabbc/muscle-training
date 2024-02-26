@@ -1,59 +1,61 @@
 <!DOCTYPE html>
  <html lang="ja">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>管理者編集</title>
- </head>
+ @include('layouts.head')
+ <title>トレーニング記録</title>
  <body>
-     <header>
-         <nav>
-             <a>筋トレ管理アプリ</a>
-             <a href="#" class="btn">ログアウト</a>
-         </nav>
-     </header>
+   @include('layouts.header')
      <main>
         @if (session('flash_message'))
         <p>{{ session('flash_message') }}</p>
         @endif
-         <article class="trainings">
-             <div class="trainings-ui">
-                 <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
+        <div class="mb-5 ms-5">
+                 <a href="{{ route('usertrainings.index') }} "class="text-decoration-none">&lt; 戻る</a>
              </div>
+          <article class="container">
              <form action="{{ route('trainingrecords.store') }}" method="POST">
                   @csrf
 
-
-                  <div>
-                    <lavel for="trainingdate">トレーニング日</lavel> 
-                    <input type="date" id="trainingdate" name="trainingdate">
+                
+                  <div class="row mb-5 row justify-content-center">
+                    <lavel for="trainingdate" class="col-form-label col-sm-2">トレーニング日</lavel> 
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" id="trainingdate" name="trainingdate">
+                    </div>
                   </div>
-                  <lavel for="trainingpart">部位</lavel>
-                    <select id="trainingpart" name="trainingpart">
-                      @foreach($trainingname as $key => $value)
-                        <option value="{{ $key }}">{{ $value }}</option>
-                      @endforeach
-                    </select>
-                  <div>
-                    <lavel for="trainingtimes">回数</lavel>
-                    <input type="text" id="trainingtimes" name="trainingtimes">回</textarea>
+                  <div class="row mb-5 row justify-content-center">
+                    <lavel for="trainingpart" class="col-form-label col-sm-2">部位</lavel>
+                    <div class="col-sm-5">
+                      <select class="form-select" id="trainingpart" name="trainingpart"></div>
+                        @foreach($trainingname as $key => $value)
+                          <option value="{{ $key }}">{{ $value }}</option>
+                        @endforeach
+                      </select>
+                    </div>
                   </div>
-                  <div>
-                    <lavel for="trainingweight">重量</lavel>
-                    <select id="trainingweight" name="trainingweight">
-                      @foreach($weight as $key => $value)
-                        <option value="{{ $key }}">{{ $value }}</option>
-                      @endforeach
-                    </select>
+                  <div class="row mb-5 row justify-content-center">
+                    <lavel for="trainingtimes" class="col-form-label col-sm-2">回数</lavel>
+                    <div class="col-sm-5 d-flex align-items-center">
+                      <input type="text" class="form-control mx-auto0" id="trainingtimes" name="trainingtimes"><span class="align-bottom">回</span>
+                    </div>
                   </div>
-                   <button type="submit">登録</button>
+                  <div class="row mb-5 row justify-content-center">
+                    <lavel for="trainingweight" class="col-form-label col-sm-2">重量</lavel>
+                    <div class="col-sm-5">
+                      <select class="form-select" id="trainingweight" name="trainingweight">
+                        @foreach($weight as $key => $value)
+                          <option value="{{ $key }}">{{ $value }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-5 text-center">
+                   <button type="submit" class="btn btn-outline-primary justify-content-center">登録</button>
+                  </div>
              </form>
-         </article>
+          </article>
      </main>
-     <footer>
-         <p class="copyright">&copy; 筋トレ管理アプリ All rights reserved.</p>
-     </footer>
+     @include('layouts.footer')
+   </div>
  </body>
  
  </html>

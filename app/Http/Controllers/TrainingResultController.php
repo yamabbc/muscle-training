@@ -27,6 +27,7 @@ class TrainingResultController extends Controller{
           $date = mb_substr($value, 5, 5);
 
           if (!array_key_exists($year, $dateArray)) {
+              //$year(キー)に[$date](配列)を追加
               $dateArray[$year] = [$date];
           } else {
               $dateArray[$year][] = $date;

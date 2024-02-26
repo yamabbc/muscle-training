@@ -1,30 +1,18 @@
 <!DOCTYPE html>
  <html lang="ja">
- 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>管理者編集</title>
- </head>
+  @include('layouts.head')
+  <title>管理者編集</title>
  <body>
-     <header>
-         <nav>
-             <a>筋トレ管理アプリ</a>
-             <a href="#" class="btn">ログアウト</a>
-         </nav>
-     </header>
+   @include('layouts.managementheader')
      <main>
-         <article class="trainings">
-             <div class="trainings-ui">
-                 <div>
-                     <!-- ここに作成する -->
-                 </div>
+
+             <div>
                  <a href="{{ route('trainingmanagements.index') }}">&lt; 戻る</a>
              </div>
              <form action="{{ route('trainingmanagements.store') }}" method="POST">
                   @csrf
-
-                  <div>
+                <article class="container">
+                  <div class="mb-3">
                     <lavel for="trainingcategory">トレーニングカテゴリー</lavel> 
                     <select id="trainingcategory" name="trainingcategory">
                     @foreach($partvalue as $key => $value)
@@ -32,27 +20,28 @@
                     @endforeach
                     </select>
                   </div>
-                  <div>
+                  <div class="mb-3">
                     <lavel for="trainingname">トレーニング名称</lavel> 
                     <input type="text" id="trainingname" name="trainingname">
                   </div>
                   <div>
                     <lavel for="traininghow">やり方</lavel>
-                    <textarea id="traininghow" name="traininghow"></textarea>
+                    <textarea id="traininghow" class="form-control" style="height: 120px" name="traininghow"></textarea>
                   </div>
                     <lavel for="trainingeffect">効果</lavel>
-                    <textarea id="trainingeffect" name="trainingeffect"></textarea>
+                    <textarea id="trainingeffect" class="form-control" style="height: 120px" name="trainingeffect"></textarea>
                   <div>
                     <lavel for="trainingpoint">ポイント</lavel>
-                    <textarea id="trainingpoint" name="trainingpoint"></textarea>
+                    <textarea id="trainingpoint" class="form-control mb-3" style="height: 120px" name="trainingpoint"></textarea>
                    </div>
-                   <button type="submit">登録</button>
+                  <div class="text-center">
+                   <button type="submit" class="btn btn-outline-primary">登録</button>
+                  </div>
+
              </form>
          </article>
      </main>
-     <footer>
-         <p class="copyright">&copy; 筋トレ管理アプリ All rights reserved.</p>
-     </footer>
+     @include('layouts.footer')
  </body>
  
  </html>
