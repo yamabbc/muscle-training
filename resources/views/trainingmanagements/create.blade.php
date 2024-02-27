@@ -5,8 +5,8 @@
  <body>
    @include('layouts.managementheader')
      <main>
-
-             <div>
+         <article class="trainings">
+             <div class="trainings-ui">
                  <a href="{{ route('trainingmanagements.index') }}">&lt; 戻る</a>
              </div>
              <form action="{{ route('trainingmanagements.store') }}" method="POST">
@@ -37,7 +37,7 @@
                   <div class="text-center">
                    <button type="submit" class="btn btn-outline-primary">登録</button>
                   </div>
-
+                </article>
              </form>
          </article>
      </main>

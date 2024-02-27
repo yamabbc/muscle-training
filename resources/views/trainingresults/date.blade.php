@@ -9,7 +9,7 @@
              <div class="trainings-ui">
                  <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
              </div>
-             <h3>トレーニング日</h3> 
+             
 
              <style>
                 .accordion-btn::after{
@@ -22,6 +22,7 @@
              </style>
              
              <div class="container text-center">
+               <p class="h3 mb-4">トレーニング日</p>
                  @foreach($dateArray as $key=> $value)
                    <div class="accordion-btn btn btn-success btn-lg w-50 fs-3" type=="button">{{$key}}年</div>
                      <div class="accordion-content">

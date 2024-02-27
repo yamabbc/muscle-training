@@ -27,7 +27,7 @@ class AdminLoginController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.top'));
+        return redirect()->intended(route('trainingmanagements.index'));
     }
 
     /**

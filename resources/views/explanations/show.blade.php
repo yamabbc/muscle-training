@@ -13,7 +13,7 @@
              </div>
 
              @foreach($trainings as $training)
-             <div>
+             <div class="container">
              <img src="{{asset($images[0]->path)}}"height="200px" width="300px">
              <img src="{{asset($images[1]->path)}}"height="200px" width="300px">
              <h3>トレーニング名</h3>

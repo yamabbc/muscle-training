@@ -23,10 +23,9 @@ use App\Http\Controllers\UploadController;
 */
 
 //ユーザー認証機能
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserTrainingController::class, 'index'])->middleware(['auth'])->name('usertrainings.index');
 
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -36,28 +35,29 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+*/
 require __DIR__.'/auth.php';
 
 
 //ユーザー一覧画面
-Route::get('/usertrainings', [UserTrainingController::class, 'index'])->name('usertrainings.index');
+Route::get('/usertrainings', [UserTrainingController::class, 'index'])->middleware(['auth'])->name('usertrainings.index');
+
 
 
 //解説画面
-Route::get('/explanations', [TrainingExplanationController::class, 'select'])->name('explanations.select');
-Route::get('/explanations/show/{category}', [TrainingExplanationController::class, 'show'])->name('explanations.show');
+Route::get('/explanations', [TrainingExplanationController::class, 'select'])->middleware(['auth'])->name('explanations.select');
+Route::get('/explanations/show/{category}', [TrainingExplanationController::class, 'show'])->middleware(['auth'])->name('explanations.show');
 
 
 
 
 //記録画面
-Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->name('trainingrecords.input');
-Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->name('trainingrecords.store');
+Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->middleware(['auth'])->name('trainingrecords.input');
+Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->middleware(['auth'])->name('trainingrecords.store');
 
 //成果画面
-Route::get('/trainingresults/date', [TrainingResultController::class, 'date'])->name('trainingresults.date');
-Route::get('/trainingresults/display/{date}', [TrainingResultController::class, 'display'])->name('trainingresults.display');
+Route::get('/trainingresults/date', [TrainingResultController::class, 'date'])->middleware(['auth'])->name('trainingresults.date');
+Route::get('/trainingresults/display/{date}', [TrainingResultController::class, 'display'])->middleware(['auth'])->name('trainingresults.display');
 
 
 

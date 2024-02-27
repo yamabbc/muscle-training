@@ -8,7 +8,7 @@
        <div>
          <a href="{{ route('trainingmanagements.index') }}">&lt; 戻る</a>
        </div>
-       <div>
+        <div class="container">
          <h3>トレーニング名</h3>
          <p>{{ $trainings->name }}</p>
          <h3>やり方</h3>
