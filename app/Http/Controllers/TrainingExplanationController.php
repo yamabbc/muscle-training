@@ -32,7 +32,7 @@ class TrainingExplanationController extends Controller{
         
     
 
-        // 変数$trainingsをshoulder.blade.phpファイルに渡す
+        // 変数$trainingsをshow.blade.phpファイルに渡す
         return view('explanations.show',compact('trainings','part','images'));
         
     }
