@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html lang="ja">
  @include('layouts.head')
- <title>成果年月日</title>
+ <title>成果年月日選択</title>
  <body>
    @include('layouts.header')
      <main>
@@ -24,7 +24,7 @@
              <div class="container text-center">
                <p class="h3 mb-4">トレーニング日</p>
                  @foreach($dateArray as $key=> $value)
-                   <div class="accordion-btn btn btn-success btn-lg w-50 fs-3" type=="button">{{$key}}年</div>
+                   <div class="accordion-btn btn bg-success-subtle btn-lg w-50 fs-3 border border-success" type=="button">{{$key}}年</div>
                      <div class="accordion-content">
                        @foreach($value as $i =>$v)
                        @php

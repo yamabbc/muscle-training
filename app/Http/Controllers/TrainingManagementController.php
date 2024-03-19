@@ -41,16 +41,18 @@ class TrainingManagementController extends Controller{
       public function edit($id) {
         
         $trainings = Training::find($id);
+        $partvalue = Config::get('category.$part');
 
         // 変数$trainingsをedit.blade.phpファイルに渡す
-        return view('trainingmanagements.edit',compact('trainings'));
+        return view('trainingmanagements.edit',compact('trainings','partvalue'));
      }
 
      //更新機能
      public function update(TrainingRequest $request, $id) {
 
+      
       $trainings = Training::find($id);
-
+      $trainings->category = $request->trainingcategory;
       $trainings->name = $request->input('trainingname');
       $trainings->how = $request->input('traininghow');
       $trainings->effect = $request->input('trainingeffect');

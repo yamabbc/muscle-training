@@ -25,7 +25,7 @@ class AdminLoginRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'password' => 'required',
+            'password' => 'required|between:4,15',
         ];
     }
     public function authenticate(): void

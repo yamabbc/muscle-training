@@ -11,6 +11,9 @@
              </div>
              <form action="{{ route('trainingmanagements.store') }}" method="POST">
                   @csrf
+                  @foreach ($errors->all() as $error)
+                    <p style="color:red">{{ $error }}</p>
+                  @endforeach
                 <article class="container">
                   <div class="mb-3">
                     <lavel for="trainingcategory">トレーニングカテゴリー</lavel> 
@@ -21,14 +24,14 @@
                     </select>
                   </div>
                   <div class="mb-3">
-                    <lavel for="trainingname">トレーニング名称</lavel> 
+                    <lavel for="trainingname">トレーニング名</lavel> 
                     <input type="text" id="trainingname" name="trainingname">
                   </div>
                   <div>
                     <lavel for="traininghow">やり方</lavel>
                     <textarea id="traininghow" class="form-control" style="height: 120px" name="traininghow"></textarea>
                   </div>
-                    <lavel for="trainingeffect">効果</lavel>
+                    <lavel for="trainingeffect">効く部位</lavel>
                     <textarea id="trainingeffect" class="form-control" style="height: 120px" name="trainingeffect"></textarea>
                   <div>
                     <lavel for="trainingpoint">ポイント</lavel>

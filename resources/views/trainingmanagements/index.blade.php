@@ -6,7 +6,7 @@
  @include('layouts.managementheader')
      <main>
         @if (session('flash_message'))
-        <p>{{ session('flash_message') }}</p>
+        <h4>{{ session('flash_message') }}</h4>
         @endif
          <article class="trainings">
              <div class="trainings-ui">
@@ -19,7 +19,7 @@
              <table class="products-table">
                  <tr>
                    <th>id</th>
-                   <th>トレーニング名称</th>
+                   <th>トレーニング名</th>
                    <th>カテゴリ</th>
                      <ul>
                  </tr>

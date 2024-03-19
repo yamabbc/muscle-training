@@ -6,7 +6,7 @@
    @include('layouts.header')
      <main>
         @if (session('flash_message'))
-        <p>{{ session('flash_message') }}</p>
+        <h4>{{ session('flash_message') }}</h4>
         @endif
         <div class="mb-5 ms-5">
                  <a href="{{ route('usertrainings.index') }} "class="text-decoration-none">&lt; 戻る</a>
@@ -14,18 +14,22 @@
           <article class="container">
              <form action="{{ route('trainingrecords.store') }}" method="POST">
                   @csrf
-
-                
                   <div class="row mb-5 row justify-content-center">
-                    <lavel for="trainingdate" class="col-form-label col-sm-2">トレーニング日</lavel> 
+                    @if ($errors->has('trainingdate'))
+                     <p style="color:red" class="row justify-content-center">{{$errors->first('trainingdate')}}</p>
+                    @endif
+                    <lavel for="trainingdate" class="col-form-label col-sm-2 fs-4 text-success">トレーニング日</lavel> 
                     <div class="col-sm-5">
-                      <input type="date" class="form-control" id="trainingdate" name="trainingdate">
+                      <input type="date" class="form-control  border-success" id="trainingdate" name="trainingdate">
                     </div>
                   </div>
                   <div class="row mb-5 row justify-content-center">
-                    <lavel for="trainingpart" class="col-form-label col-sm-2">部位</lavel>
+                    @if ($errors->has('trainingpart'))
+                      <p style="color:red" class="row justify-content-center">{{$errors->first('trainingpart')}}</p>
+                    @endif
+                    <lavel for="trainingpart" class="col-form-label col-sm-2 fs-3 text-success">部位</lavel>
                     <div class="col-sm-5">
-                      <select class="form-select" id="trainingpart" name="trainingpart"></div>
+                      <select class="form-select border-success" id="trainingpart" name="trainingpart"></div>
                         @foreach($trainingname as $key => $value)
                           <option value="{{ $key }}">{{ $value }}</option>
                         @endforeach
@@ -33,15 +37,21 @@
                     </div>
                   </div>
                   <div class="row mb-5 row justify-content-center">
-                    <lavel for="trainingtimes" class="col-form-label col-sm-2">回数</lavel>
+                    @if ($errors->has('trainingtimes'))
+                      <p style="color:red" class="row justify-content-center">{{$errors->first('trainingtimes')}}</p>
+                    @endif
+                    <lavel for="trainingtimes" class="col-form-label col-sm-2 fs-3 text-success">回数</lavel>
                     <div class="col-sm-5 d-flex align-items-center">
-                      <input type="text" class="form-control mx-auto0" id="trainingtimes" name="trainingtimes"><span class="align-bottom">回</span>
+                      <input type="text" class="form-control mx-auto0 border-success" id="trainingtimes" name="trainingtimes"><span class="align-bottom">回</span>
                     </div>
                   </div>
                   <div class="row mb-5 row justify-content-center">
-                    <lavel for="trainingweight" class="col-form-label col-sm-2">重量</lavel>
+                    @if ($errors->has('trainingweight'))
+                      <p style="color:red" class="row justify-content-center">{{$errors->first('trainingweight')}}</p>
+                    @endif
+                    <lavel for="trainingweight" class="col-form-label col-sm-2 fs-3 text-success">重量</lavel>
                     <div class="col-sm-5">
-                      <select class="form-select" id="trainingweight" name="trainingweight">
+                      <select class="form-select border-success" id="trainingweight" name="trainingweight">
                         @foreach($weight as $key => $value)
                           <option value="{{ $key }}">{{ $value }}</option>
                         @endforeach
@@ -49,7 +59,7 @@
                     </div>
                   </div>
                   <div class="mb-5 text-center">
-                   <button type="submit" class="btn btn-outline-primary justify-content-center">登録</button>
+                   <button type="submit" class="btn btn-primary justify-content-center">登録</button>
                   </div>
              </form>
           </article>

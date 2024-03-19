@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html lang="ja">
  @include('layouts.head')
- <title>成果</title>
+ <title>成果記録</title>
  <body>
    @include('layouts.header')
      <main>

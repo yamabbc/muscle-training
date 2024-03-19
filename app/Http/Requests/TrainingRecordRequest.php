@@ -22,7 +22,10 @@ class TrainingRecordRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'trainingdate' => 'required',
+            'trainingpart' => 'required',
+            'trainingtimes' => ['required', 'integer' ,'between:1,100'],
+            'trainingweight' => 'required',
         ];
     }
 }

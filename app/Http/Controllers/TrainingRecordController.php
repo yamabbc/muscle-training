@@ -8,6 +8,7 @@ use App\Models\Training_record;
 use Illuminate\Support\Facades\Config;
 use App\Http\Requests\TrainingRecordRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 
 class TrainingRecordController extends Controller{

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class TrainingRequest extends FormRequest
 {
     /**
@@ -22,7 +23,11 @@ class TrainingRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'trainingcategory' => 'required',
             'trainingname' => 'required',
+            'traininghow' => 'required',
+            'trainingeffect' => 'required',
+            'trainingpoint' => 'required',
         ];
     }
 }

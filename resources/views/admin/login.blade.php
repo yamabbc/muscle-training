@@ -27,6 +27,9 @@
         <main>
             <form method="POST" action="{{ route('admin.login.store') }}">
                 @csrf
+                @foreach ($errors->all() as $error)
+                  <p style="color:red">{{ $error }}</p>
+                @endforeach
                 <div>
                     <label for="name">Name: </label>
                     <input type="text" id="name" name="name" required />
@@ -36,9 +39,6 @@
                     <input type="password" id="password" name="password" required />
                 </div>
                 <div>
-                    @error('failed')
-                        <p style="color:red">{{ $message }}</p>
-                    @enderror
                     <button type="submit">ログイン</button>
                 </div>
             </form>
