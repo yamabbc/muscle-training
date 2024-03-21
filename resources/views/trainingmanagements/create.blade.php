@@ -6,7 +6,7 @@
    @include('layouts.managementheader')
      <main>
          <article class="trainings">
-             <div class="trainings-ui">
+             <div>
                  <a href="{{ route('trainingmanagements.index') }}">&lt; 戻る</a>
              </div>
              <form action="{{ route('trainingmanagements.store') }}" method="POST">

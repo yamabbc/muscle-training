@@ -49,8 +49,6 @@ Route::get('/explanations', [TrainingExplanationController::class, 'select'])->m
 Route::get('/explanations/show/{category}', [TrainingExplanationController::class, 'show'])->middleware(['auth'])->name('explanations.show');
 
 
-
-
 //記録画面
 Route::get('/trainingrecords/input', [TrainingRecordController::class, 'input'])->middleware(['auth'])->name('trainingrecords.input');
 Route::post('/trainingrecords', [TrainingRecordController::class, 'store'])->middleware(['auth'])->name('trainingrecords.store');

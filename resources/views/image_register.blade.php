@@ -17,7 +17,6 @@
             <option value="{{ $key }}">{{ $value }}</option>
           @endforeach
         </div>
-
         <input type="file" name="img">
         <button>送信</button>
     </form>

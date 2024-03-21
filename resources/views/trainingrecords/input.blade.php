@@ -8,9 +8,9 @@
         @if (session('flash_message'))
         <h4>{{ session('flash_message') }}</h4>
         @endif
-        <div class="mb-5 ms-5">
-                 <a href="{{ route('usertrainings.index') }} "class="text-decoration-none">&lt; 戻る</a>
-             </div>
+          <div class="mb-5 ms-5">
+            <a href="{{ route('usertrainings.index') }} "class="text-decoration-none">&lt; 戻る</a>
+          </div>
           <article class="container">
              <form action="{{ route('trainingrecords.store') }}" method="POST">
                   @csrf

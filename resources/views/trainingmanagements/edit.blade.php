@@ -46,7 +46,6 @@
                   </div>
                </article>
             </form>
-
     </main>
   @include('layouts.footer')
  </body>

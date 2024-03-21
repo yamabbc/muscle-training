@@ -5,12 +5,10 @@
  <body>
    @include('layouts.header')
      <main>
-         <article class="trainingsshow">
-             <div class="trainings-ui">
-                 <div>
-                   <a href="{{ route('explanations.select') }}">&lt; 戻る</a>
-                 </div>
-             </div>
+         <article class="trainings">
+            <div>
+              <a href="{{ route('explanations.select') }}">&lt; 戻る</a>
+            </div>
             @foreach($trainings as $training)
             <div class="container bg-body-secondary border border-success-subtle">
               <div class="row">
@@ -54,5 +52,4 @@
      </main>
      @include('layouts.footer')
  </body>
- 
  </html>

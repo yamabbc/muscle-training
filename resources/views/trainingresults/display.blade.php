@@ -6,7 +6,7 @@
    @include('layouts.header')
      <main>
          <article class="trainings">
-             <div class="trainings-ui">
+             <div>
                  <a href="{{ route('trainingresults.date') }}">&lt; 戻る</a>
              </div>
              <div class="container">
@@ -16,11 +16,9 @@
                 $e = substr_replace($d, '月',9,1);
                 @endphp
                <p class="fs-5">{{$e}}日</p>
-
                <h4>トレーニング内容</h4>
                @foreach($trainingrecordss as $trainingrecordsss)
                <div class="card mb-1 border border-success">
-
                  <div class="row">
                    <div class="col-4 text-center">
                      <p class="card-text fs-5">{{$trainingname[$trainingrecordsss->training_id]}}</p>
@@ -31,12 +29,10 @@
                    <div class="col-4 text-center">
                      <p class="card-text fs-5">{{ $trainingrecordsss->weight/1000}}kg</p>
                    </div>
-                  </div>
-
+                 </div>
                </div>
                @endforeach
              </div>
-
          </article>
      </main>
      @include('layouts.footer')

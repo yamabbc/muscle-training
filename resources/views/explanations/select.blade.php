@@ -10,10 +10,8 @@
         @endif
          <article class="trainings">
              <div class="trainings-ui">
-                 <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
+               <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
              </div>
-             <table class="products-table">
-               <tr>
                   <div class="container">
                     <h3>部位を選択してください</h3>
                     <div class="row">
@@ -38,8 +36,6 @@
                       </div>
                     </div>
                   </div>
-                </tr>
-             </table>
          </article>
      </main>
      @include('layouts.footer')

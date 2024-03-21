@@ -9,10 +9,7 @@
         <h4>{{ session('flash_message') }}</h4>
         @endif
          <article class="trainings">
-             <div class="trainings-ui">
-                 <div>
-                     <!-- ここに作成する -->
-                 </div>
+             <div>
                  <a href="{{ route('trainingmanagements.create') }}"><button type=="button">トレーニング解説登録</button></a>
                  <a href="{{ route('image_register') }}"><button type=="button">画像登録</button></a>
              </div>
@@ -21,7 +18,7 @@
                    <th>id</th>
                    <th>トレーニング名</th>
                    <th>カテゴリ</th>
-                     <ul>
+                   <ul>
                  </tr>
                 @foreach($trainings as $training)
                  <tr>

@@ -6,11 +6,9 @@
    @include('layouts.header')
      <main>
          <article class="trainings">
-             <div class="trainings-ui">
+             <div>
                  <a href="{{ route('usertrainings.index') }}">&lt; 戻る</a>
              </div>
-             
-
              <style>
                 .accordion-btn::after{
                   content: '▼';
@@ -25,18 +23,15 @@
                <p class="h3 mb-4">トレーニング日</p>
                  @foreach($dateArray as $key=> $value)
                    <div class="accordion-btn btn bg-success-subtle btn-lg w-50 fs-3 border border-success" type=="button">{{$key}}年</div>
-                     <div class="accordion-content">
-                       @foreach($value as $i =>$v)
-                       @php
-                       $s = str_replace('-', '月',$v);
-                       @endphp
-                         <a href="{{ route('trainingresults.display',['date'=> "$key-$v"]) }}"><button class="btn btn-outline-success btn-lg w-50 fs-5" type=="button">{{ $s}} 日</button></a><br>
-                       @endforeach 
-                     </div>
+                   <div class="accordion-content">
+                     @foreach($value as $i =>$v)
+                     @php
+                     $s = str_replace('-', '月',$v);
+                     @endphp
+                       <a href="{{ route('trainingresults.display',['date'=> "$key-$v"]) }}"><button class="btn btn-outline-success btn-lg w-50 fs-5" type=="button">{{$s}} 日</button></a><br>
+                     @endforeach 
+                   </div>
                  @endforeach 
-
-                
-
 
                <script>
                  document.querySelectorAll('.accordion-btn').forEach(function(el){

@@ -9,7 +9,7 @@
 </head>
 <body>
     <article class="trainings">
-      <div class="trainings-ui">
+      <div>
         <a href="{{ route('trainingmanagements.index') }}">&lt; 戻る</a>
       </div>
     <img src="{{asset($Training_image->path)}}" height="200px" width="300px">

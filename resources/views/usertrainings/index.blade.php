@@ -11,18 +11,17 @@
             height: 80px;
           }
         </style>
-
-              <div class="container">
-                <div class="m-5 pt-5 text-center">
-                  <a href="{{ route('explanations.select') }}"><button class="btn btn-primary btn-lg w-50" type=="button">トレーニング解説 <i class="bi bi-lightbulb"></i></button></a>
-                </div>
-                <div class="m-5 pt-5 text-center">
-                  <a href="{{ route('trainingrecords.input') }}"><button class="btn btn-primary btn-lg w-50" type=="button">記録 <i class="bi bi-pencil"></i></button></a>
-                </div>
-                <div class="m-5 pt-5 text-center">
-                  <a href="{{ route('trainingresults.date') }}"><button class="btn btn-primary btn-lg w-50" type=="button">成果 <i class="bi bi-book"></i></button></a>
-                </div>
-              </div>
+        <div class="container">
+          <div class="m-5 pt-5 text-center">
+            <a href="{{ route('explanations.select') }}"><button class="btn btn-primary btn-lg w-50" type=="button">トレーニング解説 <i class="bi bi-lightbulb"></i></button></a>
+          </div>
+          <div class="m-5 pt-5 text-center">
+            <a href="{{ route('trainingrecords.input') }}"><button class="btn btn-primary btn-lg w-50" type=="button">記録 <i class="bi bi-pencil"></i></button></a>
+          </div>
+          <div class="m-5 pt-5 text-center">
+            <a href="{{ route('trainingresults.date') }}"><button class="btn btn-primary btn-lg w-50" type=="button">成果 <i class="bi bi-book"></i></button></a>
+          </div>
+        </div>
     </main>
      @include('layouts.footer')
  </body>
