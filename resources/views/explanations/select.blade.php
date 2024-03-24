@@ -19,7 +19,7 @@
                         <a href="{{ route('explanations.show'}}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙腕解説.png')}}"height="auto" width="150px"></button><br><p>腕解説</p></a><br>
                       </div>
                       <div class="col-6 text-center">
-                        <a href="{{ route('explanations.show',[$trainings[1]]) }}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙肩解説.png')}}"height="auto" width="150px"></button><br><p>肩解説</p></a><br>
+                        <a href="{{ route('explanations.show'}}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙肩解説.png')}}"height="auto" width="150px"></button><br><p>肩解説</p></a><br>
                       </div>
                     </div>
                     <div class="row">
