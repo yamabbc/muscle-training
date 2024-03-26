@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Config;
 
 class TrainingResultController extends Controller{
     public function date() {
-      $trainingrecords4 = DB::table('Training_records')->select('date')->get();
+      $trainingrecords4 = DB::table('training_records')->select('date')->get();
         foreach ($trainingrecords4 as $trainingrecord4){
           $datearrays[]=$trainingrecord4->date;
           $dates = [];
