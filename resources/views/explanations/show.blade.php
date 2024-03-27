@@ -26,7 +26,7 @@
                   @if($training->id==1)
                     <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
                   @elseif($training->id==2)
-                    <img src="{{asset($images[1]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
                   @elseif($training->id==3)
                     <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
                   @elseif($training->id==4)

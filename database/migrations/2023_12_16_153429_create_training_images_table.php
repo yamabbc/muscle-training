@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('training_images', function (Blueprint $table) {
             $table->id()->nullable(false);
             $table->foreignId('training_id')->nullable()->constrained();
-            $table->string('path')->nullable(false);
+            $table->longText('path')->nullable(false);
             $table->integer('sort')->nullable(false);
             $table->timestamps();
             $table->softDeletes();
