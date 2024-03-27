@@ -16,23 +16,23 @@
                     <h3>部位を選択してください</h3>
                     <div class="row">
                       <div class="col-6 text-center">
-                        <a href="{{ route('explanations.show',[$trainings[0]])}}"><button type=="button" class="rounded"><img src="{{('storage/表紙腕解説.png')}}"height="auto" width="150px"></button><br><p>腕解説</p></a><br>
+                        <a href="{{ route('explanations.show',[$trainings[0]])}}"><button type=="button" class="rounded"><img src="data:image/png;base64,{{($images[16]->path)}}"height="auto" width="150px"></button><br><p>腕解説</p></a><br>
                       </div>
                       <div class="col-6 text-center">
-                        <a href="{{ route('explanations.show',[$trainings[1]])}}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙肩解説.png')}}"height="auto" width="150px"></button><br><p>肩解説</p></a><br>
+                        <a href="{{ route('explanations.show',[$trainings[1]])}}"><button type=="button" class="rounded"><img src="data:image/png;base64,{{($images[17]->path)}}"height="auto" width="150px"></button><br><p>肩解説</p></a><br>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col text-center">
-                        <a href="{{ route('explanations.show',[$trainings[2]]) }}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙胸解説.png')}}"height="auto" width="150px"></button><br><p>胸解説</p></a><br>
+                        <a href="{{ route('explanations.show',[$trainings[2]]) }}"><button type=="button" class="rounded"><img src="data:image/png;base64,{{($images[18]->path)}}"height="auto" width="150px"></button><br><p>胸解説</p></a><br>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-6 text-center">
-                        <a href="{{ route('explanations.show',[$trainings[3]]) }}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙背中解説.png')}}"height="auto" width="150px"></button><br><p>背中解説</p></a><br>
+                        <a href="{{ route('explanations.show',[$trainings[3]]) }}"><button type=="button" class="rounded"><img src="data:image/png;base64,{{($images[19]->path)}}"height="auto" width="150px"></button><br><p>背中解説</p></a><br>
                       </div>
                       <div class="col-6 text-center">
-                        <a href="{{ route('explanations.show',[$trainings[4]]) }}"><button type=="button" class="rounded"><img src="{{asset('storage/表紙脚解説.png')}}"height="auto" width="150px"></button><br><p>脚解説</p></a><br>
+                        <a href="{{ route('explanations.show',[$trainings[4]]) }}"><button type=="button" class="rounded"><img src="data:image/png;base64,{{($images[20]->path)}}"height="auto" width="150px"></button><br><p>脚解説</p></a><br>
                       </div>
                     </div>
                   </div>

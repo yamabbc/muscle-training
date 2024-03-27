@@ -14,7 +14,8 @@ class TrainingExplanationController extends Controller{
     public function select() {
         $trainings = Training::all();
         $part = Config::get('category.$part');
-        return view('explanations.select',compact('trainings','part'));
+        $images = Training_image::select('path')->get();
+        return view('explanations.select',compact('trainings','part','images'));
     }
     // 詳細ページ
     public function show($category) {

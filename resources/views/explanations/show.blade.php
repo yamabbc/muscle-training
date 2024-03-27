@@ -24,25 +24,25 @@
                 </div>
                 <div class="col-4 mb-5">
                   @if($training->id==1)
-                    <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
-                  @elseif($training->id==2)
                     <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
+                  @elseif($training->id==2)
+                    <img src="data:image/png;base64,{{($images[3]->path)}}"height="auto" width="100%">
                   @elseif($training->id==3)
-                    <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
                   @elseif($training->id==4)
-                    <img src="{{asset($images[1]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[3]->path)}}"height="auto" width="100%">
                   @elseif($training->id==5)
-                   <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
                   @elseif($training->id==6)
-                   <img src="{{asset($images[1]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[3]->path)}}"height="auto" width="100%">
                   @elseif($training->id==7)
-                   <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
                   @elseif($training->id==8)
-                   <img src="{{asset($images[1]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[3]->path)}}"height="auto" width="100%">
                   @elseif($training->id==9)
-                   <img src="{{asset($images[0]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[2]->path)}}"height="auto" width="100%">
                   @elseif($training->id==10)
-                   <img src="{{asset($images[1]->path)}}"height="auto" width="100%">
+                    <img src="data:image/png;base64,{{($images[3]->path)}}"height="auto" width="100%">
                   @endif
                 </div>
               </div>
